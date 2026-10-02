@@ -18,6 +18,7 @@ import {
   FileSearch,
 } from 'lucide-react';
 import { StudentProfile, Backlog } from '../../types';
+import { BackLiftLogo } from '../Common/BackLiftLogo';
 
 interface LandingPageProps {
   student: StudentProfile;
@@ -54,6 +55,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         {/* Ambient Glowing Blobs */}
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl -z-10" />
         <div className="absolute bottom-0 right-10 w-80 h-80 bg-cyan-600/15 rounded-full blur-3xl -z-10" />
+
+        <div className="flex justify-center mb-2">
+          <BackLiftLogo size="lg" showTagline={false} />
+        </div>
 
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-xs font-bold tracking-wide">
           <Sparkles className="w-4 h-4 text-cyan-400" />

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { StudentProfile, RecoveryFactorBreakdown } from '../types';
 import { NavTab } from './Sidebar';
+import { BackLiftLogo } from './Common/BackLiftLogo';
 
 interface NavbarProps {
   student: StudentProfile;
@@ -55,29 +56,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-[#080c15]/80 backdrop-blur-xl border-b border-white/[0.06] px-4 sm:px-8 py-3.5 transition-all">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Brand Logo with 3D feel */}
+        {/* Brand Logo with vector lift wings */}
         <div
           onClick={() => onNavigateTab(activeTab === 'landing' ? 'dashboard' : 'landing')}
-          className="flex items-center gap-3 cursor-pointer group"
+          className="cursor-pointer group hover:scale-[1.02] transition-transform"
           title="Toggle Landing Page / Dashboard"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/25 border border-white/20 transform-gpu group-hover:scale-105 transition-all">
-            <span className="font-black text-sm text-white tracking-wider">BL</span>
-            <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#080c15]" />
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-indigo-300 transition-colors">
-                BackLift<span className="text-indigo-400 font-normal">.AI</span>
-              </span>
-              <span className="hidden sm:inline-block text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                Academic Turnaround
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-400 hidden sm:block">
-              Intelligent Recovery & Study Management
-            </p>
-          </div>
+          <BackLiftLogo size="md" showTagline={true} />
         </div>
 
         {/* Center / Right Metrics & Quick Actions */}

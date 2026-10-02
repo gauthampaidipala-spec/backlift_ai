@@ -10,6 +10,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { StudentProfile } from '../../types';
+import { BackLiftLogo } from '../Common/BackLiftLogo';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -61,19 +62,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        {/* Brand Header */}
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-black text-lg shadow-lg shadow-indigo-600/30">
-            BL
+        {/* Brand Header with Custom Logo */}
+        <div className="flex flex-col items-center text-center space-y-3">
+          <BackLiftLogo size="lg" showText={false} />
+          <div>
+            <h3 className="text-xl font-black text-white">
+              {authMode === 'signin' ? 'Welcome Back to BackLift.AI' : 'Create Your Student Account'}
+            </h3>
+            <p className="text-xs text-slate-400 mt-1">
+              {authMode === 'signin'
+                ? 'Log in to continue your academic recovery sprint.'
+                : 'Join thousands of university students turning backlogs into degree completion.'}
+            </p>
           </div>
-          <h3 className="text-xl font-black text-white">
-            {authMode === 'signin' ? 'Welcome Back to BackLift.AI' : 'Create Your Student Account'}
-          </h3>
-          <p className="text-xs text-slate-400">
-            {authMode === 'signin'
-              ? 'Log in to continue your academic recovery sprint.'
-              : 'Join thousands of students turning backlogs into degree completion.'}
-          </p>
         </div>
 
         {/* Tab Toggle: Sign In vs Sign Up */}

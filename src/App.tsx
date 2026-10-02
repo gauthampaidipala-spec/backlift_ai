@@ -32,7 +32,7 @@ export function App() {
   const [weakTopics, setWeakTopics] = useState<string[]>(() => storageService.getWeakTopics());
   const [quizAttempts, setQuizAttempts] = useState<QuizAttempt[]>(() => storageService.getQuizAttempts());
 
-  const [activeTab, setActiveTab] = useState<NavTab>('dashboard');
+  const [activeTab, setActiveTab] = useState<NavTab>('landing');
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showReportModal, setShowReportModal] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
