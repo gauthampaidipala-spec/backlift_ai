@@ -14,6 +14,9 @@ import { CollegeDashboard } from './components/Institutional/CollegeDashboard';
 import { StartupBlueprint } from './components/Documentation/StartupBlueprint';
 import { OnboardingModal } from './components/OnboardingModal';
 import { RecoveryReportModal } from './components/Modals/RecoveryReportModal';
+import { LandingPage } from './components/Landing/LandingPage';
+import { AuthModal } from './components/Auth/AuthModal';
+import { ProfileSettings } from './components/Settings/ProfileSettings';
 
 import { StudentProfile, Backlog, StudyPlanItem, QuizAttempt } from './types';
 import { storageService } from './services/storageService';
@@ -32,6 +35,7 @@ export function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('dashboard');
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [showReportModal, setShowReportModal] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   // Sync state to storage
   useEffect(() => {
@@ -142,9 +146,12 @@ export function App() {
         recoveryScore={overallScore}
         recoveryFactors={factors}
         gradeBadge={gradeBadge}
+        activeTab={activeTab}
+        onNavigateTab={setActiveTab}
         onOpenReportModal={() => setShowReportModal(true)}
         onResetData={handleResetData}
         onOpenOnboarding={() => setShowOnboarding(true)}
+        onOpenAuthModal={() => setShowAuthModal(true)}
       />
 
       {/* Main Layout Area */}
@@ -159,6 +166,15 @@ export function App() {
 
         {/* Dynamic Main Workspace Container */}
         <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-hidden">
+          {activeTab === 'landing' && (
+            <LandingPage
+              student={student}
+              backlogs={backlogs}
+              onLaunchApp={() => setActiveTab('dashboard')}
+              onOpenLogin={() => setShowAuthModal(true)}
+            />
+          )}
+
           {activeTab === 'dashboard' && (
             <StudentDashboard
               student={student}
@@ -246,8 +262,30 @@ export function App() {
           {activeTab === 'blueprint' && (
             <StartupBlueprint />
           )}
+
+          {activeTab === 'settings' && (
+            <ProfileSettings
+              student={student}
+              backlogs={backlogs}
+              onUpdateProfile={(updated) => setStudent(updated)}
+              onOpenReportModal={() => setShowReportModal(true)}
+              onResetData={handleResetData}
+            />
+          )}
         </main>
       </div>
+
+      {/* Student Authentication Modal */}
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        onLoginSuccess={(newProfile) => {
+          if (newProfile) {
+            setStudent((prev) => ({ ...prev, ...newProfile }));
+          }
+          setActiveTab('dashboard');
+        }}
+      />
 
       {/* Onboarding Modal */}
       <OnboardingModal

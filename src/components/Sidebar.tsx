@@ -12,9 +12,12 @@ import {
   Building2,
   Briefcase,
   ChevronRight,
+  Home,
+  Settings,
 } from 'lucide-react';
 
 export type NavTab =
+  | 'landing'
   | 'dashboard'
   | 'backlogs'
   | 'planner'
@@ -25,7 +28,8 @@ export type NavTab =
   | 'timer'
   | 'buddy'
   | 'campus'
-  | 'blueprint';
+  | 'blueprint'
+  | 'settings';
 
 interface SidebarProps {
   activeTab: NavTab;
@@ -41,6 +45,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
   criticalCount,
 }) => {
   const sections = [
+    {
+      group: 'EXPLORE & SHOWCASE',
+      items: [
+        {
+          id: 'landing' as NavTab,
+          label: 'Home / Landing Page',
+          icon: Home,
+          badge: 'Live',
+          badgeColor: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+        },
+      ],
+    },
     {
       group: 'RECOVERY CORE',
       items: [
@@ -66,9 +82,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
         },
         {
           id: 'chatbot' as NavTab,
-          label: 'AI Coach',
+          label: 'AI Coach (LiftBot)',
           icon: Bot,
-          badge: 'LiftBot',
+          badge: 'Q1-Q5',
           badgeColor: 'bg-purple-500/15 text-purple-300 border-purple-500/30',
         },
       ],
@@ -125,6 +141,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
           icon: Briefcase,
           badge: 'Defense',
           badgeColor: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
+        },
+      ],
+    },
+    {
+      group: 'PREFERENCES',
+      items: [
+        {
+          id: 'settings' as NavTab,
+          label: 'Profile & Settings',
+          icon: Settings,
+          badge: null,
         },
       ],
     },

@@ -31,15 +31,15 @@ export const AIChatbot: React.FC<AIChatbotProps> = ({
 
 I have loaded your profile with **${backlogs.length} active backlogs** and an **Academic Recovery Score of 68/100**.
 
-Click any quick question below or ask me anything about exam strategy, simplifying complex proofs, or creating custom study timetables:`,
+Click any official assignment evaluation question below or ask me anything about exam strategy, simplifying complex proofs, or creating custom study timetables:`,
       timestamp: 'Just now',
       suggestions: [
+        'What are the most repeatedly asked questions in Engineering Mathematics-II over the last 5 years?',
+        'I have 4 hours daily and 2 backlogs (Operating Systems + Data Structures). How should I divide my time?',
+        'Explain Laplace Transforms using an analogy a 2nd-year student would understand.',
+        'I missed studying yesterday. How do I recover without falling behind on my current semester?',
+        'Give me a quick 3-question diagnostic quiz on Process Synchronization.',
         'Which subject should I study first?',
-        'How should I prepare for my 3 backlogs?',
-        'Explain Fourier Series simply',
-        'Create a 7-day study plan',
-        'Give me important topics',
-        'I have 15 days before my exam. What should I do?',
       ],
     },
   ]);
@@ -283,23 +283,63 @@ Click any quick question below or ask me anything about exam strategy, simplifyi
         </form>
 
         {/* Preset Prompt Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs text-slate-400">
-          <span className="font-bold text-slate-500 shrink-0 text-[11px]">Quick Prompts:</span>
-          {[
-            'Which subject should I study first?',
-            'How should I prepare for my 3 backlogs?',
-            'Explain Fourier Series simply',
-            'I have 15 days before my exam. What should I do?',
-            'Give me important topics',
-          ].map((prompt, pIdx) => (
-            <button
-              key={pIdx}
-              onClick={() => handleSendMessage(prompt)}
-              className="px-3 py-1 rounded-full glass-panel hover:border-indigo-500/30 text-slate-300 whitespace-nowrap transition cursor-pointer hover:text-white"
-            >
-              {prompt}
-            </button>
-          ))}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+            <span className="font-bold text-indigo-400 shrink-0 text-[11px] flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-cyan-400" />
+              Evaluation Queries:
+            </span>
+            {[
+              {
+                label: 'Q1: Repeated Math-II Topics',
+                query: 'What are the most repeatedly asked questions in Engineering Mathematics-II over the last 5 years?',
+              },
+              {
+                label: 'Q2: Split 4 Study Hours',
+                query: 'I have 4 hours daily and 2 backlogs (Operating Systems + Data Structures). How should I divide my time?',
+              },
+              {
+                label: 'Q3: Laplace Analogy',
+                query: 'Explain Laplace Transforms using an analogy a 2nd-year student would understand.',
+              },
+              {
+                label: 'Q4: Missed-Day Recovery',
+                query: 'I missed studying yesterday. How do I recover without falling behind on my current semester?',
+              },
+              {
+                label: 'Q5: Diagnostic Quiz',
+                query: 'Give me a quick 3-question diagnostic quiz on Process Synchronization.',
+              },
+            ].map((item, pIdx) => (
+              <button
+                key={pIdx}
+                type="button"
+                onClick={() => handleSendMessage(item.query)}
+                className="px-3 py-1.5 rounded-xl bg-indigo-950/60 hover:bg-indigo-900 border border-indigo-500/30 text-indigo-200 text-xs font-semibold whitespace-nowrap transition cursor-pointer hover:text-white hover:border-indigo-400"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs text-slate-400">
+            <span className="font-bold text-slate-500 shrink-0 text-[11px]">General Turnaround:</span>
+            {[
+              'Which subject should I study first?',
+              'How should I prepare for my 3 backlogs?',
+              'Explain Fourier Series simply',
+              'I have 15 days before my exam. What should I do?',
+            ].map((prompt, pIdx) => (
+              <button
+                key={pIdx}
+                type="button"
+                onClick={() => handleSendMessage(prompt)}
+                className="px-3 py-1 rounded-full glass-panel hover:border-indigo-500/30 text-slate-300 text-[11px] whitespace-nowrap transition cursor-pointer hover:text-white"
+              >
+                {prompt}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>

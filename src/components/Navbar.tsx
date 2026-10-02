@@ -8,17 +8,23 @@ import {
   Info,
   ChevronDown,
   User,
+  Home,
+  LogIn,
 } from 'lucide-react';
 import { StudentProfile, RecoveryFactorBreakdown } from '../types';
+import { NavTab } from './Sidebar';
 
 interface NavbarProps {
   student: StudentProfile;
   recoveryScore: number;
   recoveryFactors: RecoveryFactorBreakdown[];
   gradeBadge: string;
+  activeTab: NavTab;
+  onNavigateTab: (tab: NavTab) => void;
   onOpenReportModal: () => void;
   onResetData: () => void;
   onOpenOnboarding: () => void;
+  onOpenAuthModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -26,9 +32,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   recoveryScore,
   recoveryFactors,
   gradeBadge,
+  activeTab,
+  onNavigateTab,
   onOpenReportModal,
   onResetData,
   onOpenOnboarding,
+  onOpenAuthModal,
 }) => {
   const [showFactorMenu, setShowFactorMenu] = useState(false);
 
@@ -47,14 +56,18 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-40 w-full bg-[#080c15]/80 backdrop-blur-xl border-b border-white/[0.06] px-4 sm:px-8 py-3.5 transition-all">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Brand Logo with 3D feel */}
-        <div className="flex items-center gap-3">
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/25 border border-white/20 transform-gpu hover:scale-105 transition-all">
+        <div
+          onClick={() => onNavigateTab(activeTab === 'landing' ? 'dashboard' : 'landing')}
+          className="flex items-center gap-3 cursor-pointer group"
+          title="Toggle Landing Page / Dashboard"
+        >
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 shadow-lg shadow-indigo-500/25 border border-white/20 transform-gpu group-hover:scale-105 transition-all">
             <span className="font-black text-sm text-white tracking-wider">BL</span>
             <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-[#080c15]" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg tracking-tight text-white">
+              <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-indigo-300 transition-colors">
                 BackLift<span className="text-indigo-400 font-normal">.AI</span>
               </span>
               <span className="hidden sm:inline-block text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
@@ -150,10 +163,39 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </div>
 
+          {/* Landing / Dashboard Page View Toggle */}
+          <button
+            onClick={() => onNavigateTab(activeTab === 'landing' ? 'dashboard' : 'landing')}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/[0.08] text-slate-200 hover:text-white transition cursor-pointer"
+            title={activeTab === 'landing' ? 'Open Student Dashboard' : 'View Public Landing Page'}
+          >
+            {activeTab === 'landing' ? (
+              <>
+                <Award className="w-3.5 h-3.5 text-indigo-400" />
+                <span className="hidden sm:inline">Go to Dashboard</span>
+              </>
+            ) : (
+              <>
+                <Home className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="hidden sm:inline">Landing Page</span>
+              </>
+            )}
+          </button>
+
+          {/* Sign In / College SSO Modal Trigger */}
+          <button
+            onClick={onOpenAuthModal}
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-white/[0.06] hover:bg-white/[0.1] text-slate-200 hover:text-white border border-white/[0.08] transition cursor-pointer"
+            title="Student Login / Sign Up"
+          >
+            <LogIn className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Sign In</span>
+          </button>
+
           {/* Recovery Report Button */}
           <button
             onClick={onOpenReportModal}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20 transition-all hover:scale-102"
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20 transition-all hover:scale-102 cursor-pointer"
           >
             <FileDown className="w-3.5 h-3.5" />
             <span>Report</span>
@@ -161,9 +203,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Profile / Edit Button */}
           <button
-            onClick={onOpenOnboarding}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-white/[0.07] rounded-xl transition"
-            title="Edit Profile & Backlogs"
+            onClick={() => onNavigateTab('settings')}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800 border border-white/[0.07] rounded-xl transition cursor-pointer"
+            title="Profile & Settings"
           >
             <User className="w-3.5 h-3.5 text-slate-400" />
             <span className="hidden md:inline">{student.name.split(' ')[0]}</span>
@@ -172,7 +214,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Reset Demo Data Button */}
           <button
             onClick={onResetData}
-            className="p-1.5 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-xl transition"
+            className="p-1.5 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-xl transition cursor-pointer"
             title="Reset Sample Demo Data"
           >
             <RotateCcw className="w-4 h-4" />
