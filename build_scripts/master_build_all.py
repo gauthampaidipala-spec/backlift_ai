@@ -17,80 +17,69 @@ def run_master_build():
     print("=" * 78)
 
     # 1. Problem Statement
-    print("\n[1/14] Building 01 Problem Statement.pdf...")
+    print("\n[1/12] Building 01 Problem Statement.pdf...")
     import make_pdf_01_problem_statement
     make_pdf_01_problem_statement.generate_pdf(os.path.join(target_dir, "01 Problem Statement.pdf"))
 
     # 2. Brand Identity
-    print("\n[2/14] Building 02 Brand Identity.pdf...")
+    print("\n[2/12] Building 02 Brand Identity.pdf...")
     import make_pdf_02_brand_identity
     make_pdf_02_brand_identity.generate_pdf(os.path.join(target_dir, "02 Brand Identity.pdf"))
 
     # 3. Product Definition
-    print("\n[3/14] Building 03 Product Definition.pdf...")
+    print("\n[3/12] Building 03 Product Definition.pdf...")
     import make_pdf_03_product_definition
     make_pdf_03_product_definition.generate_pdf(os.path.join(target_dir, "03 Product Definition.pdf"))
 
     # 4. User Journey Map
-    print("\n[4/14] Building 04 User Journey Map.pdf...")
+    print("\n[4/12] Building 04 User Journey Map.pdf...")
     import make_pdf_04_user_journey_map
     make_pdf_04_user_journey_map.generate_pdf(os.path.join(target_dir, "04 User Journey Map.pdf"))
 
     # 5. UI/UX Prototype & Figma
-    print("\n[5/14] Building 05 UI UX Prototype...")
+    print("\n[5/12] Building 05 UI UX Prototype...")
     import make_05_ui_ux_prototype
     make_05_ui_ux_prototype.generate_pdf(os.path.join(target_dir, "05 UI UX Prototype - Figma Link.pdf"))
     make_05_ui_ux_prototype.generate_txt(os.path.join(target_dir, "05 UI UX Prototype - Figma Link.txt"))
 
     # 6. Business Model
-    print("\n[6/14] Building 06 Business Model.pdf...")
+    print("\n[6/12] Building 06 Business Model.pdf...")
     import make_pdf_06_business_model
     make_pdf_06_business_model.generate_pdf(os.path.join(target_dir, "06 Business Model.pdf"))
 
     # 7. Business Plan
-    print("\n[7/14] Building 07 Business Plan.pdf...")
+    print("\n[7/12] Building 07 Business Plan.pdf...")
     import make_pdf_07_business_plan
     make_pdf_07_business_plan.generate_pdf(os.path.join(target_dir, "07 Business Plan.pdf"))
 
     # 8. Financial Projections Spreadsheet
-    print("\n[8/14] Building 08 Financial Projection.xlsx...")
+    print("\n[8/12] Building 08 Financial Projection.xlsx...")
     import make_excel_08_financial_projection
     make_excel_08_financial_projection.build_financial_model(os.path.join(target_dir, "08 Financial Projection.xlsx"))
 
     # 9. Landing Page
-    print("\n[9/14] Building 09 Landing Page...")
+    print("\n[9/12] Building 09 Landing Page...")
     import make_09_landing_page
     make_09_landing_page.generate_pdf(os.path.join(target_dir, "09 Landing Page - Live Link.pdf"))
     make_09_landing_page.generate_txt(os.path.join(target_dir, "09 Landing Page - Live Link.txt"))
 
     # 10. AI Data Strategy
-    print("\n[10/14] Building 10 AI Data Strategy.pdf...")
+    print("\n[10/12] Building 10 AI Data Strategy.pdf...")
     import make_pdf_10_ai_data_strategy
     make_pdf_10_ai_data_strategy.generate_pdf(os.path.join(target_dir, "10 AI Data Strategy.pdf"))
 
-    # 11. Datasets & Sources Folder
-    print("\n[11/14] Building 11 Dataset & Sources/...")
+    # 11. Datasets & Sources (PDF & raw catalog directory)
+    print("\n[11/12] Building 11 Dataset & Sources.pdf and dataset directory...")
     import make_11_dataset_and_sources
+    make_11_dataset_and_sources.generate_pdf(os.path.join(target_dir, "11 Dataset & Sources.pdf"))
     make_11_dataset_and_sources.build_datasets_and_sources(target_dir)
 
     # 12. Working AI Prototype Link & Runner
-    print("\n[12/14] Building 12 Working AI Prototype...")
+    print("\n[12/12] Building 12 Working AI Prototype...")
     import make_12_working_ai_prototype
     make_12_working_ai_prototype.generate_pdf(os.path.join(target_dir, "12 Working AI Prototype Link.pdf"))
     make_12_working_ai_prototype.generate_txt(os.path.join(target_dir, "12 Working AI Prototype Link.txt"))
     make_12_working_ai_prototype.generate_runner_script(os.path.join(target_dir, "run_prototype_demo.py"))
-
-    # 13. Pitch Deck (PPTX & PDF)
-    print("\n[13/14] Building 13 Final Pitch Deck (18 Slides PPTX & PDF)...")
-    import make_13_pitch_deck
-    make_13_pitch_deck.build_pptx(os.path.join(target_dir, "13 Final Pitch Deck.pptx"))
-    make_13_pitch_deck.build_pdf_slides(os.path.join(target_dir, "13 Final Pitch Deck.pdf"))
-
-    # 14. Live Pitch Script & Defense Guide
-    print("\n[14/14] Building 14 Live Pitch Script & Defense Guide...")
-    import make_14_live_pitch_guide
-    make_14_live_pitch_guide.generate_pdf(os.path.join(target_dir, "14 Live Pitch Script & Defense Guide.pdf"))
-    make_14_live_pitch_guide.generate_txt(os.path.join(target_dir, "14 Live Pitch Script & Defense Guide.txt"))
 
     # Master README
     readme_path = os.path.join(target_dir, "README.md")
@@ -116,7 +105,7 @@ def run_master_build():
 
 ## 📌 Master Submission Index & Deliverables Checklist
 
-This folder contains the complete, official startup deliverables matching the exact internship submission checklist:
+This folder contains the complete, official startup deliverables matching the exact internship submission checklist (Deliverables 01 through 12):
 
 | Deliverable # | Required File | Format | Description / Contents | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -130,18 +119,16 @@ This folder contains the complete, official startup deliverables matching the ex
 | **08** | `08 Financial Projection.xlsx` | Excel (.xlsx) | 6-sheet financial model: KPI summary, capex/setup, 3-year P&L, unit economics (CAC, LTV), break-even (Month 14), funding ask | ✅ Complete |
 | **09** | `09 Landing Page - Live Link.pdf`<br/>`09 Landing Page - Live Link.txt` | PDF & TXT | Live URL access (`https://shambhavisharma2608-dot.github.io/backlift_ai/`), GitHub repo, hero section, interactive ARS demo, pricing | ✅ Complete |
 | **10** | `10 AI Data Strategy.pdf` | PDF | Multi-tier LLM architecture (Gemini Flash/Pro), RAG pipeline, pgvector, Input→Processing→Output specs, ethical AI guardrails | ✅ Complete |
-| **11** | `11 Dataset & Sources/` | Directory | 7 comprehensive research docs + university syllabi JSON + 10-year question paper dataset + student telemetry benchmark CSV | ✅ Complete |
+| **11** | `11 Dataset & Sources.pdf`<br/>`11 Dataset & Sources/` | PDF & Directory | Complete dataset specification document (450+ exams, 4,800+ questions, 10-year sample data table, research citations) + raw catalog directory | ✅ Complete |
 | **12** | `12 Working AI Prototype Link.pdf`<br/>`run_prototype_demo.py` | PDF, TXT & Python | Working prototype access links (`https://shambhavisharma2608-dot.github.io/backlift_ai/`) + verification of the **5 core assignment evaluation queries** | ✅ Complete |
-| **13** | `13 Final Pitch Deck.pptx`<br/>`13 Final Pitch Deck.pdf` | PPTX & PDF | Recommended **18-slide executive pitch deck** covering problem, solution, product, market, competition, business model, financials & ask | ✅ Complete |
-| **14** | `14 Live Pitch Script & Defense Guide.pdf` | PDF & TXT | 2-minute elevator pitch script, 5-minute formal presentation script, and winning answers to Top 5 evaluator questions | ✅ Complete |
 
 ---
 
 ## 🌟 The Assignment's "Golden Rule" Alignment
 
 ```text
-Problem → User → Journey → Solution → Business → Data → AI → Prototype → Pitch
-   [01]     [01/04]   [04]       [03]        [06/07]    [10/11]  [10]     [05/12]     [13/14]
+Problem → User → Journey → Solution → Business → Data → AI → Prototype
+   [01]     [01/04]   [04]       [03]        [06/07]    [11]   [10]    [05/12]
 ```
 
 Every single component in this submission folder directly connects to the sequential Golden Rule workflow, delivering an integrated, airtight startup project ready for internship evaluation and investor defense.
