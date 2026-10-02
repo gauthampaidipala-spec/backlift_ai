@@ -1,0 +1,185 @@
+import os
+import sys
+import time
+
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
+def run_master_build():
+    target_dir = r"C:\Users\gauth\OneDrive\Desktop\shambhu persnal folder\final_internship_project_backlift_ai"
+    os.makedirs(target_dir, exist_ok=True)
+    print("=" * 78)
+    print("[*] BACKLIFT AI -- MASTER SUBMISSION GENERATOR")
+    print(f"Destination: {target_dir}")
+    print("=" * 78)
+
+    # 1. Problem Statement
+    print("\n[1/14] Building 01 Problem Statement.pdf...")
+    import make_pdf_01_problem_statement
+    make_pdf_01_problem_statement.generate_pdf(os.path.join(target_dir, "01 Problem Statement.pdf"))
+
+    # 2. Brand Identity
+    print("\n[2/14] Building 02 Brand Identity.pdf...")
+    import make_pdf_02_brand_identity
+    make_pdf_02_brand_identity.generate_pdf(os.path.join(target_dir, "02 Brand Identity.pdf"))
+
+    # 3. Product Definition
+    print("\n[3/14] Building 03 Product Definition.pdf...")
+    import make_pdf_03_product_definition
+    make_pdf_03_product_definition.generate_pdf(os.path.join(target_dir, "03 Product Definition.pdf"))
+
+    # 4. User Journey Map
+    print("\n[4/14] Building 04 User Journey Map.pdf...")
+    import make_pdf_04_user_journey_map
+    make_pdf_04_user_journey_map.generate_pdf(os.path.join(target_dir, "04 User Journey Map.pdf"))
+
+    # 5. UI/UX Prototype & Figma
+    print("\n[5/14] Building 05 UI UX Prototype...")
+    import make_05_ui_ux_prototype
+    make_05_ui_ux_prototype.generate_pdf(os.path.join(target_dir, "05 UI UX Prototype - Figma Link.pdf"))
+    make_05_ui_ux_prototype.generate_txt(os.path.join(target_dir, "05 UI UX Prototype - Figma Link.txt"))
+
+    # 6. Business Model
+    print("\n[6/14] Building 06 Business Model.pdf...")
+    import make_pdf_06_business_model
+    make_pdf_06_business_model.generate_pdf(os.path.join(target_dir, "06 Business Model.pdf"))
+
+    # 7. Business Plan
+    print("\n[7/14] Building 07 Business Plan.pdf...")
+    import make_pdf_07_business_plan
+    make_pdf_07_business_plan.generate_pdf(os.path.join(target_dir, "07 Business Plan.pdf"))
+
+    # 8. Financial Projections Spreadsheet
+    print("\n[8/14] Building 08 Financial Projection.xlsx...")
+    import make_excel_08_financial_projection
+    make_excel_08_financial_projection.build_financial_model(os.path.join(target_dir, "08 Financial Projection.xlsx"))
+
+    # 9. Landing Page
+    print("\n[9/14] Building 09 Landing Page...")
+    import make_09_landing_page
+    make_09_landing_page.generate_pdf(os.path.join(target_dir, "09 Landing Page - Live Link.pdf"))
+    make_09_landing_page.generate_txt(os.path.join(target_dir, "09 Landing Page - Live Link.txt"))
+
+    # 10. AI Data Strategy
+    print("\n[10/14] Building 10 AI Data Strategy.pdf...")
+    import make_pdf_10_ai_data_strategy
+    make_pdf_10_ai_data_strategy.generate_pdf(os.path.join(target_dir, "10 AI Data Strategy.pdf"))
+
+    # 11. Datasets & Sources Folder
+    print("\n[11/14] Building 11 Dataset & Sources/...")
+    import make_11_dataset_and_sources
+    make_11_dataset_and_sources.build_datasets_and_sources(target_dir)
+
+    # 12. Working AI Prototype Link & Runner
+    print("\n[12/14] Building 12 Working AI Prototype...")
+    import make_12_working_ai_prototype
+    make_12_working_ai_prototype.generate_pdf(os.path.join(target_dir, "12 Working AI Prototype Link.pdf"))
+    make_12_working_ai_prototype.generate_txt(os.path.join(target_dir, "12 Working AI Prototype Link.txt"))
+    make_12_working_ai_prototype.generate_runner_script(os.path.join(target_dir, "run_prototype_demo.py"))
+
+    # 13. Pitch Deck (PPTX & PDF)
+    print("\n[13/14] Building 13 Final Pitch Deck (18 Slides PPTX & PDF)...")
+    import make_13_pitch_deck
+    make_13_pitch_deck.build_pptx(os.path.join(target_dir, "13 Final Pitch Deck.pptx"))
+    make_13_pitch_deck.build_pdf_slides(os.path.join(target_dir, "13 Final Pitch Deck.pdf"))
+
+    # 14. Live Pitch Script & Defense Guide
+    print("\n[14/14] Building 14 Live Pitch Script & Defense Guide...")
+    import make_14_live_pitch_guide
+    make_14_live_pitch_guide.generate_pdf(os.path.join(target_dir, "14 Live Pitch Script & Defense Guide.pdf"))
+    make_14_live_pitch_guide.generate_txt(os.path.join(target_dir, "14 Live Pitch Script & Defense Guide.txt"))
+
+    # Master README
+    readme_path = os.path.join(target_dir, "README.md")
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write("""# 🎓 BackLift AI — Final Internship Project Submission Package
+
+> **Startup Project Name:** BackLift AI  
+> **Tagline:** From Backlog Paralysis to Degree Completion  
+> **Domain:** EdTech / Higher Education Academic Recovery & Remediation Platform  
+> **Assignment Reference:** BridgeAura — From Problem to Pitch (Complete 28-Page Guidelines)  
+
+---
+
+## 📌 Master Submission Index & Deliverables Checklist
+
+This folder contains the complete, official startup deliverables matching the exact internship submission checklist:
+
+| Deliverable # | Required File | Format | Description / Contents | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | `01 Problem Statement.pdf` | PDF | Problem breakdown, target user personas, current solution failures, pain points, market opportunity | ✅ Complete |
+| **02** | `02 Brand Identity.pdf` | PDF | Brand name, taglines, logo symbolism, brand story, mission & vision, personality, color palette & typography | ✅ Complete |
+| **03** | `03 Product Definition.pdf` | PDF | Product capabilities, 10 core modules, how it works, Priority Engine formulation, ARS score, competitive matrix | ✅ Complete |
+| **04** | `04 User Journey Map.pdf` | PDF | 7 stages: Awareness → Discovery → Sign-up → First use → Core experience → Outcome → Retention | ✅ Complete |
+| **05** | `05 UI UX Prototype - Figma Link.pdf`<br/>`05 UI UX Prototype - Figma Link.txt` | PDF & TXT | Official Figma Prototype: `https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1` — 8 core screens, design system, interactive flows | ✅ Complete |
+| **06** | `06 Business Model.pdf` | PDF | Lean Canvas & Business Model Canvas, 9 building blocks, dual-engine monetization (B2C & B2B) | ✅ Complete |
+| **07** | `07 Business Plan.pdf` | PDF | Executive summary, market sizing (TAM $8.4B, SAM $1.8B, SOM $140M), GTM strategy, competitive analysis, risk mitigation | ✅ Complete |
+| **08** | `08 Financial Projection.xlsx` | Excel (.xlsx) | 6-sheet financial model: KPI summary, capex/setup, 3-year P&L, unit economics (CAC, LTV), break-even (Month 14), funding ask | ✅ Complete |
+| **09** | `09 Landing Page - Live Link.pdf`<br/>`09 Landing Page - Live Link.txt` | PDF & TXT | Live URL access, hero section, social proof, features showcase, interactive ARS demo, testimonials, pricing | ✅ Complete |
+| **10** | `10 AI Data Strategy.pdf` | PDF | Multi-tier LLM architecture (Gemini Flash/Pro), RAG pipeline, pgvector, Input→Processing→Output specs, ethical AI guardrails | ✅ Complete |
+| **11** | `11 Dataset & Sources/` | Directory | 7 comprehensive research docs + university syllabi JSON + 10-year question paper dataset + student telemetry benchmark CSV | ✅ Complete |
+| **12** | `12 Working AI Prototype Link.pdf`<br/>`run_prototype_demo.py` | PDF, TXT & Python | Working prototype access links + verification of the **5 meaningful questions answered by the AI** using ingested datasets | ✅ Complete |
+| **13** | `13 Final Pitch Deck.pptx`<br/>`13 Final Pitch Deck.pdf` | PPTX & PDF | Recommended **18-slide executive pitch deck** covering problem, solution, product, market, competition, business model, financials & ask | ✅ Complete |
+| **14** | `14 Live Pitch Script & Defense Guide.pdf` | PDF & TXT | 2-minute elevator pitch script, 5-minute formal presentation script, and winning answers to Top 5 evaluator questions | ✅ Complete |
+
+---
+
+## 🌟 The Assignment's "Golden Rule" Alignment
+
+```text
+Problem → User → Journey → Solution → Business → Data → AI → Prototype → Pitch
+   [01]     [01/04]   [04]       [03]        [06/07]    [10/11]  [10]     [05/12]     [13/14]
+```
+
+Every single component in this submission folder directly connects to the sequential Golden Rule workflow, delivering an integrated, airtight startup project ready for internship evaluation and investor defense.
+
+---
+
+## 🚀 How to Test & Verify Deliverables
+
+1. **View Documents & Presentations:**
+   - All PDF documents are formatted to publication standards and can be opened in any standard PDF viewer or browser.
+   - `13 Final Pitch Deck.pptx` can be opened in Microsoft PowerPoint, Google Slides, or Apple Keynote.
+   - `08 Financial Projection.xlsx` contains active formulas, tabs, and formatted number formatting viewable in Microsoft Excel or Google Sheets.
+
+2. **Run the AI Prototype Demonstration (Offline Verification):**
+   ```bash
+   python run_prototype_demo.py
+   ```
+   *This command immediately executes the automated verification of the 5 meaningful questions answered by BackLift AI.*
+
+3. **Run the Live Interactive Web Prototype (Localhost):**
+   ```bash
+   cd backlift-ai
+   npm install
+   npm run dev
+   ```
+   *Then open http://localhost:5173/ in your browser.*
+
+---
+*BackLift AI — Confidential & Proprietary Startup Submission*
+""")
+
+    print(f"\n[Summary] Writing master README.md -> {readme_path}")
+    print("\n" + "=" * 78)
+    print("[SUCCESS] ALL DELIVERABLES GENERATED SUCCESSFULLY IN:")
+    print(f"Destination: {target_dir}")
+    print("=" * 78)
+
+    # Verification Inventory
+    print("\nVerified Directory Inventory:")
+    for root, dirs, files in os.walk(target_dir):
+        rel_root = os.path.relpath(root, target_dir)
+        indent = "  " if rel_root != "." else ""
+        if rel_root != ".":
+            print(f"📁 {rel_root}/")
+        for f in sorted(files):
+            full_f = os.path.join(root, f)
+            sz = os.path.getsize(full_f)
+            print(f"{indent}  • {f} ({sz:,} bytes)")
+
+if __name__ == "__main__":
+    run_master_build()
