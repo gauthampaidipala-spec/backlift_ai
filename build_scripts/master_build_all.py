@@ -104,6 +104,16 @@ def run_master_build():
 
 ---
 
+## 🌐 Official Verification & Interactive Access Links
+
+| Asset / Deliverable | Official Verified URL | Description |
+| :--- | :--- | :--- |
+| **🚀 Live Production Web Application** | **[https://shambhavisharma2608-dot.github.io/backlift_ai/](https://shambhavisharma2608-dot.github.io/backlift_ai/)** | Deployed on GitHub Pages. Direct in-browser testing of Landing Page, Login, Student Dashboard, Backlog Matrix, and AI LiftBot with 5 queries. |
+| **📦 GitHub Source Code Repository** | **[https://github.com/shambhavisharma2608-dot/backlift_ai](https://github.com/shambhavisharma2608-dot/backlift_ai)** | Complete full-stack React 19 + TypeScript + Vite codebase, git commit logs, and CI/CD automated deployment workflow. |
+| **🎨 Interactive Figma Prototype** | **[https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1](https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1)** | 8-screen high-fidelity interactive prototype, UI design system tokens, components, and user flows. |
+
+---
+
 ## 📌 Master Submission Index & Deliverables Checklist
 
 This folder contains the complete, official startup deliverables matching the exact internship submission checklist:
@@ -114,14 +124,14 @@ This folder contains the complete, official startup deliverables matching the ex
 | **02** | `02 Brand Identity.pdf` | PDF | Brand name, taglines, logo symbolism, brand story, mission & vision, personality, color palette & typography | ✅ Complete |
 | **03** | `03 Product Definition.pdf` | PDF | Product capabilities, 10 core modules, how it works, Priority Engine formulation, ARS score, competitive matrix | ✅ Complete |
 | **04** | `04 User Journey Map.pdf` | PDF | 7 stages: Awareness → Discovery → Sign-up → First use → Core experience → Outcome → Retention | ✅ Complete |
-| **05** | `05 UI UX Prototype - Figma Link.pdf`<br/>`05 UI UX Prototype - Figma Link.txt` | PDF & TXT | Official Figma Prototype: `https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1` — 8 core screens, design system, interactive flows | ✅ Complete |
+| **05** | `05 UI UX Prototype - Figma Link.pdf`<br/>`05 UI UX Prototype - Figma Link.txt` | PDF & TXT | Official Figma Prototype (`https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1`), Live Web App link, and screen inventory | ✅ Complete |
 | **06** | `06 Business Model.pdf` | PDF | Lean Canvas & Business Model Canvas, 9 building blocks, dual-engine monetization (B2C & B2B) | ✅ Complete |
 | **07** | `07 Business Plan.pdf` | PDF | Executive summary, market sizing (TAM $8.4B, SAM $1.8B, SOM $140M), GTM strategy, competitive analysis, risk mitigation | ✅ Complete |
 | **08** | `08 Financial Projection.xlsx` | Excel (.xlsx) | 6-sheet financial model: KPI summary, capex/setup, 3-year P&L, unit economics (CAC, LTV), break-even (Month 14), funding ask | ✅ Complete |
-| **09** | `09 Landing Page - Live Link.pdf`<br/>`09 Landing Page - Live Link.txt` | PDF & TXT | Live URL access, hero section, social proof, features showcase, interactive ARS demo, testimonials, pricing | ✅ Complete |
+| **09** | `09 Landing Page - Live Link.pdf`<br/>`09 Landing Page - Live Link.txt` | PDF & TXT | Live URL access (`https://shambhavisharma2608-dot.github.io/backlift_ai/`), GitHub repo, hero section, interactive ARS demo, pricing | ✅ Complete |
 | **10** | `10 AI Data Strategy.pdf` | PDF | Multi-tier LLM architecture (Gemini Flash/Pro), RAG pipeline, pgvector, Input→Processing→Output specs, ethical AI guardrails | ✅ Complete |
 | **11** | `11 Dataset & Sources/` | Directory | 7 comprehensive research docs + university syllabi JSON + 10-year question paper dataset + student telemetry benchmark CSV | ✅ Complete |
-| **12** | `12 Working AI Prototype Link.pdf`<br/>`run_prototype_demo.py` | PDF, TXT & Python | Working prototype access links + verification of the **5 meaningful questions answered by the AI** using ingested datasets | ✅ Complete |
+| **12** | `12 Working AI Prototype Link.pdf`<br/>`run_prototype_demo.py` | PDF, TXT & Python | Working prototype access links (`https://shambhavisharma2608-dot.github.io/backlift_ai/`) + verification of the **5 core assignment evaluation queries** | ✅ Complete |
 | **13** | `13 Final Pitch Deck.pptx`<br/>`13 Final Pitch Deck.pdf` | PPTX & PDF | Recommended **18-slide executive pitch deck** covering problem, solution, product, market, competition, business model, financials & ask | ✅ Complete |
 | **14** | `14 Live Pitch Script & Defense Guide.pdf` | PDF & TXT | 2-minute elevator pitch script, 5-minute formal presentation script, and winning answers to Top 5 evaluator questions | ✅ Complete |
 
@@ -138,26 +148,30 @@ Every single component in this submission folder directly connects to the sequen
 
 ---
 
-## 🚀 How to Test & Verify Deliverables
+## 🚀 How Evaluators & Mentors Can Test Deliverables
 
-1. **View Documents & Presentations:**
-   - All PDF documents are formatted to publication standards and can be opened in any standard PDF viewer or browser.
-   - `13 Final Pitch Deck.pptx` can be opened in Microsoft PowerPoint, Google Slides, or Apple Keynote.
-   - `08 Financial Projection.xlsx` contains active formulas, tabs, and formatted number formatting viewable in Microsoft Excel or Google Sheets.
+1. **Direct In-Browser Live Testing (Zero Installation Needed):**
+   - Click the live deployment link: **[https://shambhavisharma2608-dot.github.io/backlift_ai/](https://shambhavisharma2608-dot.github.io/backlift_ai/)**
+   - The application opens on the **Home / Landing Page** with the interactive **Backlog Priority Calculator**.
+   - Click **"Launch Dashboard"** or **"Sign In with College SSO"** (1-click Rahul Sharma demo login) to enter the student workspace.
+   - Navigate to **"AI Coach (LiftBot)"** and click the **Q1 to Q5 chips** to test the 5 assignment evaluation queries directly!
 
-2. **Run the AI Prototype Demonstration (Offline Verification):**
+2. **Source Code & Git History Review:**
+   - Review code, commits, and pull requests at: **[https://github.com/shambhavisharma2608-dot/backlift_ai](https://github.com/shambhavisharma2608-dot/backlift_ai)**
+
+3. **Offline Automated CLI Prototype Demonstration:**
    ```bash
    python run_prototype_demo.py
    ```
-   *This command immediately executes the automated verification of the 5 meaningful questions answered by BackLift AI.*
+   *Executes instant algorithmic verification of all 5 AI answers in any command prompt or terminal.*
 
-3. **Run the Live Interactive Web Prototype (Localhost):**
+4. **Local Development Server Execution:**
    ```bash
    cd backlift-ai
    npm install
    npm run dev
    ```
-   *Then open http://localhost:5173/ in your browser.*
+   *Opens local development server at `http://localhost:5174/`.*
 
 ---
 *BackLift AI — Confidential & Proprietary Startup Submission*

@@ -22,15 +22,19 @@ def generate_pdf(output_path):
     ))
     story.append(Spacer(1, 14))
 
-    # Live Prototype Links Box
+    # Live Prototype Links Box with Clickable Hyperlinks
     story.append(create_callout(
-        "<b>Interactive Figma Prototype Link:</b><br/>"
-        "<font color='#0284C7'><u>https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1</u></font><br/><br/>"
-        "<b>Working Interactive Web Prototype (Local / Live):</b><br/>"
-        "• Localhost URL: <code>http://localhost:5173/</code><br/>"
-        "• Production Deployment: <code>https://backlift-ai-prototype.vercel.app/</code><br/>"
-        "• Repository Source: <code>backlift-ai (React 19 + TypeScript + Tailwind CSS)</code>",
-        title="Official Prototype & Figma Deliverable Links",
+        "<b>🎨 Official Interactive Figma Prototype (Click to Open):</b><br/>"
+        "<a href='https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1'><font color='#4F46E5'><b><u>https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1</u></b></font></a><br/><br/>"
+        "<b>🌐 Live Production Web Application (Click to Open):</b><br/>"
+        "<a href='https://shambhavisharma2608-dot.github.io/backlift_ai/'><font color='#4F46E5'><b><u>https://shambhavisharma2608-dot.github.io/backlift_ai/</u></b></font></a><br/>"
+        "<i>(Direct in-browser access: Tests Landing Page, Login, Student Dashboard, Backlog Matrix, and AI Coach with 5 queries)</i><br/><br/>"
+        "<b>📦 Official GitHub Repository (Source Code):</b><br/>"
+        "<a href='https://github.com/shambhavisharma2608-dot/backlift_ai'><font color='#4F46E5'><b><u>https://github.com/shambhavisharma2608-dot/backlift_ai</u></b></font></a><br/>"
+        "<i>(Complete full-stack React + TypeScript + Vite codebase and Git commit history)</i><br/><br/>"
+        "<b>⚡ Local Development Server:</b><br/>"
+        "<code>http://localhost:5174/</code> (Clone repository and run: <code>npm install && npm run dev</code>)",
+        title="Official Prototype & Figma Deliverable Links (Active Clickable Hyperlinks)",
         style="info"
     ))
     story.append(Spacer(1, 14))
@@ -147,9 +151,10 @@ Category     : EdTech / Academic Recovery & Study Management Platform
    https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1
 
 2. LIVE INTERACTIVE WEB PROTOTYPE (Production & Local):
-   • Production URL : https://backlift-ai-prototype.vercel.app/
-   • Localhost Dev  : http://localhost:5173/ (Run via `npm run dev`)
-   • Codebase Path  : backlift-ai/ (React 19 + TypeScript + Vite + Tailwind CSS)
+   • Live Cloud App (GitHub Pages) : https://shambhavisharma2608-dot.github.io/backlift_ai/
+   • GitHub Source Code Repository  : https://github.com/shambhavisharma2608-dot/backlift_ai
+   • Localhost Dev Server           : http://localhost:5174/ (Run via `npm run dev`)
+   • Codebase Path                  : backlift-ai/ (React 19 + TypeScript + Vite + Tailwind CSS)
 
 3. PROTOTYPE SCREEN ARCHITECTURE (All 12 Core Requirements Fulfilled):
    -----------------------------------------------------------------------------

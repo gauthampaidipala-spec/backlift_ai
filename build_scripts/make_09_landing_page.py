@@ -22,15 +22,19 @@ def generate_pdf(output_path):
     ))
     story.append(Spacer(1, 14))
 
-    # Live Access Box
+    # Live Access Box with Clickable Hyperlinks
     story.append(create_callout(
-        "<b>Primary Live Production URL:</b><br/>"
-        "<font color='#0284C7'><u>https://backlift-ai-prototype.vercel.app/</u></font><br/><br/>"
-        "<b>Secondary Mirror / Demo URL:</b><br/>"
-        "<font color='#0284C7'><u>https://backlift-ai.netlify.app/</u></font><br/><br/>"
-        "<b>Localhost Development Access:</b><br/>"
-        "<code>http://localhost:5173/</code> (Clone repo and run: <code>npm install && npm run dev</code>)",
-        title="Live Landing Page & Application URLs",
+        "<b>🌐 Primary Live Production Landing Page (Click to Open):</b><br/>"
+        "<a href='https://shambhavisharma2608-dot.github.io/backlift_ai/'><font color='#4F46E5'><b><u>https://shambhavisharma2608-dot.github.io/backlift_ai/</u></b></font></a><br/>"
+        "<i>(Hosted on GitHub Pages: Instant in-browser testing of Hero, Interactive Priority Calculator, 4 Pillars, Testimonials, and Pricing)</i><br/><br/>"
+        "<b>📦 Official GitHub Repository (Source Code):</b><br/>"
+        "<a href='https://github.com/shambhavisharma2608-dot/backlift_ai'><font color='#4F46E5'><b><u>https://github.com/shambhavisharma2608-dot/backlift_ai</u></b></font></a><br/>"
+        "<i>(Complete source repository with React 19 + TypeScript + Vite, git history, and automated GitHub Actions deployment)</i><br/><br/>"
+        "<b>🎨 Official Interactive Figma Prototype:</b><br/>"
+        "<a href='https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1'><font color='#4F46E5'><b><u>https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1</u></b></font></a><br/><br/>"
+        "<b>⚡ Local Development Access:</b><br/>"
+        "<code>http://localhost:5174/</code> (Clone repository and run: <code>npm install && npm run dev</code>)",
+        title="Live Landing Page & Production URLs (Active Clickable Hyperlinks)",
         style="info"
     ))
     story.append(Spacer(1, 14))
@@ -133,9 +137,10 @@ Category     : EdTech / Academic Recovery Platform
 
 1. LIVE APPLICATION & LANDING PAGE ACCESS URLS:
    -----------------------------------------------------------------------------
-   • Primary Production Web App : https://backlift-ai-prototype.vercel.app/
-   • Secondary Mirror           : https://backlift-ai.netlify.app/
-   • Local Development Server   : http://localhost:5173/
+   • Primary Production Web App : https://shambhavisharma2608-dot.github.io/backlift_ai/
+   • GitHub Source Code Repo    : https://github.com/shambhavisharma2608-dot/backlift_ai
+   • Official Figma Prototype   : https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1
+   • Local Development Server   : http://localhost:5174/
 
 2. HOW TO RUN THE LANDING PAGE LOCALLY:
    Step 1: Open terminal in project directory:

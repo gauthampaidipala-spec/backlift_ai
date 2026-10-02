@@ -22,12 +22,19 @@ def generate_pdf(output_path):
     ))
     story.append(Spacer(1, 14))
 
-    # Access Links Callout
+    # Access Links Callout with Clickable Hyperlinks
     story.append(create_callout(
-        "<b>Live Prototype URL:</b> <font color='#0284C7'><u>https://backlift-ai-prototype.vercel.app/</u></font><br/>"
-        "<b>Localhost URL:</b> <code>http://localhost:5173/</code> (Run: <code>npm install && npm run dev</code>)<br/>"
-        "<b>Offline Automated CLI Demo Script:</b> Run <code>python run_prototype_demo.py</code> in this submission folder to test all 5 AI answers instantaneously!",
-        title="Interactive Prototype Verification Links",
+        "<b>🌐 Live Production Web Application (Click to Open):</b><br/>"
+        "<a href='https://shambhavisharma2608-dot.github.io/backlift_ai/'><font color='#4F46E5'><b><u>https://shambhavisharma2608-dot.github.io/backlift_ai/</u></b></font></a><br/>"
+        "<i>(Direct browser access: Tests Landing Page, Login/Signup, Student Dashboard, Backlog Matrix, and AI Coach with all 5 queries)</i><br/><br/>"
+        "<b>📦 Official GitHub Repository (Source Code):</b><br/>"
+        "<a href='https://github.com/shambhavisharma2608-dot/backlift_ai'><font color='#4F46E5'><b><u>https://github.com/shambhavisharma2608-dot/backlift_ai</u></b></font></a><br/>"
+        "<i>(Complete React + TypeScript + Vite codebase, Git commit history, and CI/CD deployment workflows)</i><br/><br/>"
+        "<b>🎨 Official Interactive Figma Prototype:</b><br/>"
+        "<a href='https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1'><font color='#4F46E5'><b><u>https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1</u></b></font></a><br/><br/>"
+        "<b>⚡ Offline Automated CLI Demo Script:</b><br/>"
+        "Run <code>python run_prototype_demo.py</code> in this submission folder to test all 5 AI answers instantaneously in any terminal!",
+        title="Verified Live Prototype & Repository Access Links (Active Clickable Hyperlinks)",
         style="info"
     ))
     story.append(Spacer(1, 14))
@@ -98,9 +105,11 @@ Category     : EdTech / Academic Recovery & Remediation AI
 
 1. PROTOTYPE ACCESS INSTRUCTIONS:
    -----------------------------------------------------------------------------
-   • Web Application (Cloud) : https://backlift-ai-prototype.vercel.app/
-   • Web Application (Local) : http://localhost:5173/ (via `npm run dev`)
-   • Command Line Runner     : python run_prototype_demo.py
+   • Live Cloud App (GitHub Pages) : https://shambhavisharma2608-dot.github.io/backlift_ai/
+   • GitHub Source Code Repository  : https://github.com/shambhavisharma2608-dot/backlift_ai
+   • Official Figma Prototype Link  : https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1
+   • Localhost Application Access   : http://localhost:5174/ (Run `npm run dev`)
+   • Automated CLI Verification     : python run_prototype_demo.py
 
 2. THE 5 CORE QUESTIONS DEMONSTRATING THE AI SOLUTION:
    -----------------------------------------------------------------------------
@@ -238,7 +247,9 @@ INVERSE LAPLACE to bring your answer back into the real world. You got this!'"""
 
     print("\\n" + "=" * 78)
     print("SUCCESS: All 5 Core AI Capabilities Demonstrated Successfully!")
-    print("Visit the Live Web App: https://backlift-ai-prototype.vercel.app/")
+    print("Live Production Web App : https://shambhavisharma2608-dot.github.io/backlift_ai/")
+    print("GitHub Source Code Repo : https://github.com/shambhavisharma2608-dot/backlift_ai")
+    print("Official Figma Prototype: https://www.figma.com/make/KN916hkdl3762ch5EnrQoV/backlift_ai?t=b51UAJWRmicmOZu8-1")
     print("=" * 78)
 
 if __name__ == "__main__":
